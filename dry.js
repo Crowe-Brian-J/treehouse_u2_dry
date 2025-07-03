@@ -10,21 +10,19 @@ const vegetables = [
   { name: 'red peppers', price: '3.00' }
 ]
 
-fruits[0]['price'] = parseFloat(fruits[0]['price'])
-fruits[1]['price'] = parseFloat(fruits[1]['price'])
-fruits[2]['price'] = parseFloat(fruits[2]['price'])
+//function to change price from string to float, add location
+const arrPropChange = (arr) => {
+  const location = 'produce section'
 
-vegetables[0]['price'] = parseFloat(vegetables[0]['price'])
-vegetables[1]['price'] = parseFloat(vegetables[1]['price'])
-vegetables[2]['price'] = parseFloat(vegetables[2]['price'])
+  for (let i = 0; i < arr.length; i++) {
+    arr[i]['price'] = parseFloat(arr[i]['price'])
+    arr[i]['location'] = location
+  }
+}
 
-fruits[0]['location'] = 'produce section'
-fruits[1]['location'] = 'produce section'
-fruits[2]['location'] = 'produce section'
-
-vegetables[0]['location'] = 'produce section'
-vegetables[1]['location'] = 'produce section'
-vegetables[2]['location'] = 'produce section'
+//call functions on both fruits and vegetables
+arrPropChange(fruits)
+arrPropChange(vegetables)
 
 console.log(fruits)
 console.log(vegetables)
